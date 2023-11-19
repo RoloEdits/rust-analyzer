@@ -7,7 +7,8 @@ codegen = "run --package xtask --bin xtask -- codegen"
 dist = "run --package xtask --bin xtask -- dist"
 
 [target.x86_64-pc-windows-msvc]
-linker = "rust-lld"
+linker = "lld-link"
+rustflags = ["-C", "target-cpu=native", "-C", "target-feature=+crt-static"]
 
 [env]
 CARGO_WORKSPACE_DIR = { value = "", relative = true }
