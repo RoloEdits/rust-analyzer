@@ -27,8 +27,11 @@ dissimilar.opt-level = 3
 miniz_oxide.opt-level = 3
 
 [profile.release]
-# Set this to 1 or 2 to get more useful backtraces in debugger.
 debug = 0
+lto = "fat"
+codegen-units = 1
+strip = true
+opt-level = 3
 
 [profile.dev-rel]
 inherits = "release"
